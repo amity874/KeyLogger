@@ -46,4 +46,10 @@ std::string ToString(const T&e){
     s << e;
     return s.str();
 }
+void WriteLog(const std::string &s){
+    std::ofstream file("AppLog.txt",std::ios::app);
+    file<<"["<<Helper::DataTime().GetTimeString()<<"]"<<
+    "\n"<<s<<std::endl<<"\n";
+    file.close();
+}
 #endif // HELPER_H
