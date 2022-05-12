@@ -2,6 +2,7 @@
     "C_Cpp.errorSquiggles": "EnabledIfIncludesResolve",
     "files.associations": {
         "*.ejs": "html",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "string": "cpp"
     }
 }
