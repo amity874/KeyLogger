@@ -3,6 +3,8 @@
     "files.associations": {
         "*.ejs": "html",
         "iosfwd": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "functional": "cpp",
+        "ctime": "cpp"
     }
 }

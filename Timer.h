@@ -1,6 +1,6 @@
 #ifndef TIMER_H
 #define TIMER_H
-
+#include <functional>
 #include <thread>
 #include <chrono>
 
@@ -56,7 +56,7 @@ public:
         Thread.join();
     }
     // setters and getters
-    void SetFunction(const std::function<void(void)> &f)  // for when we use the empty constructor
+    void SetFunction(const std::function<void(void)> &f)// for when we use the empty constructor
     {
         funct = f;
     }
@@ -82,14 +82,14 @@ public:
     {
         if(Alive)
             return;
-        interval = std::chrono::milliseconds(i);
+        interval=std::chrono::milliseconds(i);
     }
     unsigned long Interval() const
     {
         return interval.count();    // .count() to get an actual number from interval, because interval is of type chrono::milliseconds
     }
     const std::function<void(void)> &Function() const
-    {
+    { 
         return funct;
     }
 };
